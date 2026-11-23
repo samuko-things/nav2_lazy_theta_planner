@@ -1,0 +1,11 @@
+<class_libraries>
+  <library path="nav2_lazy_theta_planner">
+    <class
+      type="nav2_lazy_theta_planner::LazyThetaPlanner"
+      base_class_type="nav2_core::GlobalPlanner">
+      <description>
+        Lazy Theta Planner Plugin for Nav2
+      </description>
+    </class>
+  </library>
+</class_libraries>
