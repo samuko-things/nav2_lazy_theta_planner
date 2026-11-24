@@ -2,6 +2,8 @@
 
 *A lightweight Lazy Theta-P planner for ROS 2 Nav2.*
 
+![planner_test](./lazy_theta_planner_2wd_test.gif)
+
 **nav2_lazy_theta_planner** is a ROS 2 global planner plugin implementing Lazy Theta*, an any-angle pathfinding algorithm for grid-based navigation.</br>
 Unlike conventional grid-based planners that produce paths constrained to grid edges, Lazy Theta* can generate paths with fewer directional changes and more direct trajectories.</br>
 This project was developed as an alternative to the standard Nav2 Theta* planner, with a focus on producing straighter paths, simpler parameter tuning, and efficient planning.</br>
