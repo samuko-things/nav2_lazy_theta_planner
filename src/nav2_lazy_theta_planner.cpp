@@ -141,8 +141,25 @@ nav_msgs::msg::Path LazyThetaPlanner::createPlan(
   GridNode raw_goal = poseToGrid(goal.pose);
   GridNode* goal_node = get_node_from_pool(raw_goal.x, raw_goal.y);
 
-  // Execute Search
+  // check Corner case if start node is within bounds
+  if (!isGridOnMap(*start_node)) {
+    RCLCPP_ERROR(logger_, "Start not is not within Map Bounds");
+    return nav_msgs::msg::Path();
+  }
 
+  // check Corner case if goal node is within bounds
+  if (!isGridOnMap(*goal_node)) {
+    RCLCPP_ERROR(logger_, "Goal not is not within Map Bounds");
+    return nav_msgs::msg::Path();
+  }
+
+  // check Corner case if goal node is free to traverse
+  if (!isMapCellFree(*goal_node, char_map)) {
+    RCLCPP_ERROR(logger_, "Goal Node is not Traversible");
+    return nav_msgs::msg::Path();
+  }
+
+  // Execute Search
   GridNode* best_goal;
 
   best_goal = runLazyTheta(
