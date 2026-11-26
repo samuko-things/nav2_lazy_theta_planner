@@ -92,6 +92,8 @@ Special thanks to the authors and developers of the referenced algorithms, resea
 ---
 
 ### MoboBot
+> [!NOTE]
+> the **nav2_lazy_theta_planner** is now being used as the default planner of MoboBot while performing navigation using Nav2
 
 [MoboBot](https://github.com/robocre8/mobo_bot) is a ROS2-based mobile robot developed by [samuko-things](https://github.com/samuko-things) under [robocre8](https://github.com/robocre8). Pls check it out also
 
